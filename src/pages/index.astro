@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResumeParser from '../components/ResumeParser';
+---
+
+<Layout title="Resume to Magazine">
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-headline font-bold text-center mb-8">
+        Transform Your Resume into a Magazine Cover
+      </h1>
+      
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <p class="mb-4 text-gray-600">
+          Format your PDF resume with clear sections for best results:
+          <ul class="list-disc ml-6 mt-2">
+            <li>Name (first line)</li>
+            <li>Title (second line)</li>
+            <li>Sections marked with headers: "Experience", "Education", "Skills", "Contact"</li>
+            <li>Experience format: "Company | Role | Years"</li>
+            <li>Education format: "Degree | School | Year"</li>
+            <li>Skills: Comma-separated list</li>
+            <li>Contact: Email, phone, and location on separate lines</li>
+          </ul>
+        </p>
+        <ResumeParser client:only="react" />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+</style>
